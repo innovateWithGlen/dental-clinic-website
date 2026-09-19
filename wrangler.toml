@@ -1,0 +1,10 @@
+name = "smile-care-kurla"
+compatibility_date = "2025-09-19"
+
+[assets]
+directory = "./out"
+not_found_handling = "single-page-application"
+
+# For Workers Builds (GitHub-connected)
+# Build command in dashboard: npm run build
+# Deploy handles static assets from ./out + _headers for security headers
