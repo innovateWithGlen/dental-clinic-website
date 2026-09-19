@@ -980,14 +980,6 @@ export default function HomePage() {
         </div>
       </footer>
 
-      {/* ============ FLOATING CALL BUTTON (MOBILE + DESKTOP) ============ */}
-      <a
-        href="#booking"
-        className="fixed bottom-20 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3.5 text-sm font-semibold text-white shadow-xl shadow-brand-600/30 ring-4 ring-white transition hover:bg-brand-700 sm:bottom-24 sm:right-8"
-      >
-        <CalendarCheck size={18} />
-        Book Appointment
-      </a>
     </main>
   );
 }
