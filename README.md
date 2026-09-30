@@ -1,4 +1,4 @@
-# smile-care-kurla
+# simran-dental-care
 
-Modern static site for Dr. Saurabh Inamadar's Smile Care Dental Clinic, Kurla West — Next.js 16 + Cal.com booking on Cloudflare Pages
+Modern static site for Dr. Simran Chugh's Simran Dental Care, Malleshwaram, Bengaluru â€” Next.js 16 + Cal.com booking on Cloudflare Pages
 

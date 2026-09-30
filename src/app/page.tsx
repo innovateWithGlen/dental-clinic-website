@@ -26,13 +26,13 @@ import {
 } from "lucide-react";
 
 const GOOGLE_MAPS_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.2906138249327!2d72.87200127505177!3d19.065800082136672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a556777eef%3A0x23bab342ac97014f!2sSmile%20Care%20Clinic!5e1!3m2!1sen!2sus!4v1789755679009!5m2!1sen!2sus";
+  "https://www.google.com/maps?q=Simran+Dental+Care,+1,+East+Link+Road,+B+Street,+4th+Cross+Rd,+Malleshwaram,+Bengaluru,+Karnataka+560003&output=embed";
 
 const GOOGLE_MAPS_PLACE_URL =
-  "https://maps.google.com/?cid=2574719266736439631";
+  "https://www.google.com/maps/search/?api=1&query=Simran+Dental+Care+Malleshwaram+Bengaluru";
 
 const GOOGLE_MAPS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Smile+Care+Clinic,+Shop+no.+1,+sunny+chs,+Lal+Bahadur+Shastri+Marg,+near+Old+Post+Office,+Kurla+West,+Mumbai+400070";
+  "https://www.google.com/maps/dir/?api=1&destination=Simran+Dental+Care,+1,+East+Link+road,+B+street,+4th+Cross+Rd,+Malleshwaram,+Bengaluru,+Karnataka+560003";
 
 /* Inline SVG icons for brand/social where lucide doesn't include them */
 function ToothIcon({
@@ -100,44 +100,44 @@ const SERVICES = [
   {
     icon: ToothIcon,
     title: "Root Canal Treatment",
-    desc: "Single-sitting, painless root canals with advanced rotary endodontics.",
+    desc: "Painless root canal treatments followed by durable Zirconia crowns.",
     highlighted: true,
   },
   {
-    icon: Crown,
-    title: "Dental Implants",
-    desc: "Permanent, natural-looking tooth replacements using premium implants.",
+    icon: Smile,
+    title: "Braces & Clear Aligners",
+    desc: "Expert teeth alignment and braces with affordable pricing and easy EMI options.",
+    highlighted: true,
   },
   {
     icon: Stethoscope,
     title: "Wisdom Tooth Extraction",
-    desc: "Gentle, fast extractions including impacted wisdom teeth by Dr. Saurabh.",
-    highlighted: true,
-  },
-  {
-    icon: Sparkles,
-    title: "Teeth Whitening & Cleaning",
-    desc: "Professional scaling, polishing & whitening for a brighter smile.",
-  },
-  {
-    icon: Smile,
-    title: "Cosmetic Dentistry",
-    desc: "Veneers, bonding, and smile makeovers designed to match your face.",
-  },
-  {
-    icon: Baby,
-    title: "Family & Pediatric Dentistry",
-    desc: "Gentle care for kids, adults, and seniors — your family's dental home.",
-  },
-  {
-    icon: Scan,
-    title: "Digital X-Rays & Diagnosis",
-    desc: "Low-radiation digital imaging for accurate, chairside diagnosis.",
+    desc: "Gentle, painless surgical extractions handled by Dr. Simran and Surgeon Dr. Amruth.",
   },
   {
     icon: ShieldCheck,
-    title: "Dental Fillings & Restorations",
-    desc: "Tooth-coloured composite fillings and crowns that look natural.",
+    title: "Cavity Restoration & Fillings",
+    desc: "Quick, natural-looking tooth-coloured restorations and fillings.",
+  },
+  {
+    icon: Crown,
+    title: "Dental Implants",
+    desc: "Permanent, natural-looking tooth replacements with a gentle, painless approach.",
+  },
+  {
+    icon: Sparkles,
+    title: "Scaling & Teeth Whitening",
+    desc: "Deep cleaning, polishing, and whitening using modern diagnostic tech.",
+  },
+  {
+    icon: Baby,
+    title: "Family & Pediatric Care",
+    desc: "Gentle check-ups, fillings, and emergency tooth care for kids, adults, and seniors.",
+  },
+  {
+    icon: Scan,
+    title: "Advanced Diagnostics",
+    desc: "Modern equipment with clear, patient-friendly explanations of every step.",
   },
 ];
 
@@ -154,8 +154,8 @@ const HIGHLIGHTS = [
   },
   {
     icon: Star,
-    title: "5.0★ on Google",
-    desc: "163+ glowing reviews from patients across Mumbai.",
+    title: "4.9★ on Google",
+    desc: "105+ glowing reviews from patients across Bengaluru.",
   },
   {
     icon: CreditCard,
@@ -166,26 +166,26 @@ const HIGHLIGHTS = [
 
 const REVIEWS = [
   {
-    name: "Mitali Kashaveni",
-    time: "2 months ago",
-    rating: 5,
-    text:
-      "I had my wisdom tooth extracted by Dr. Saurabh Inamadar, and I had a great experience. He was professional, explained the procedure clearly, and made me feel comfortable throughout. The extraction was quick and smooth, and the clinic staff were friendly and supportive.",
-  },
-  {
-    name: "Jyoti Gupta",
-    time: "3 months ago",
-    rating: 5,
-    text:
-      "I've always had severe anxiety about going to the dentist, but Dr. Saurabh completely changed that for me. He was incredibly patient, walked me through every step, and checked on me constantly to make sure I was comfortable.",
-  },
-  {
-    name: "Milind Pawar",
-    time: "7 months ago",
+    name: "Syed Reheman",
+    time: "4 months ago",
     badge: "Local Guide",
     rating: 5,
     text:
-      "Excellent experience at Smile Care Dental Clinic! Dr. Saurabh Inamdar is an exceptional dentist — a master in Dental Surgery. His professionalism, kindness, and attention to detail put me at ease. The clinic is clean and well maintained.",
+      "I had an excellent experience at Dr. Simran's clinic in Malleshwaram. Simran is very humble and polite, she takes time to explain treatment options clearly and answering all the questions.",
+  },
+  {
+    name: "Suman Sarode",
+    time: "3 months ago",
+    rating: 5,
+    text:
+      "I am very happy with my braces treatment. The orthodontist is knowledgeable, patient, and always takes the time to answer my questions. Appointments are well-managed, and the clinic maintains high standards of hygiene.",
+  },
+  {
+    name: "Dr. Anirudh Kulkarni",
+    badge: "Local Guide",
+    rating: 5,
+    text:
+      "As a dentist myself, got my treatment done here by Dr. Simran. Had a very quick and painless procedure here for my tooth cavity. Most recommended!",
   },
 ];
 
@@ -196,18 +196,18 @@ const AMENITY_GROUPS = [
     icon: Accessibility,
   },
   {
-    title: "Amenities",
-    items: ["Clean restroom", "Comfortable waiting area"],
+    title: "Amenities & Parking",
+    items: ["Clean restroom", "On-site parking available", "LGBTQ+ friendly space"],
     icon: Bath,
   },
   {
     title: "Planning",
-    items: ["Appointments recommended", "Walk-ins welcome (subject to availability)"],
+    items: ["Appointment required", "Appointments recommended"],
     icon: CalendarCheck,
   },
   {
     title: "Payments Accepted",
-    items: ["Credit & Debit Cards", "Google Pay / UPI", "NFC mobile payments", "Cash"],
+    items: ["Debit cards", "Google Pay / UPI", "NFC mobile payments", "Easy EMI options"],
     icon: CreditCard,
   },
 ];
@@ -254,11 +254,11 @@ function SectionHeader({
 }
 
 export default function HomePage() {
-  const phone = "+919970279892";
-  const phoneDisplay = "099702 79892";
+  const phone = "+918073876563";
+  const phoneDisplay = "080738 76563";
   const address =
-    "Shop No. 1, Sunny CHS, Lal Bahadur Shastri Marg, near Old Post Office, near Imperial Cycles, Kurla West, Kurla, Mumbai, Maharashtra 400070";
-  const hours = "Mon–Sat: 10:30 AM – 9:00 PM · Sun: Closed";
+    "1, East Link Road, B Street, 4th Cross Rd, Malleshwaram, Bengaluru, Karnataka 560003";
+  const hours = "Mon–Sat: 10:00 AM – 8:00 PM · Sun: Closed";
 
   return (
     <main className="min-h-screen bg-white">
@@ -266,14 +266,16 @@ export default function HomePage() {
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-mint-600 shadow-sm">
-              <Smile className="h-6 w-6 text-white" />
-            </div>
+            <img
+              src="/images/simran-dc-logo.jpg"
+              alt="Simran Dental Care logo"
+              className="h-10 w-10 rounded-xl object-cover shadow-sm"
+            />
             <div className="leading-tight">
               <div className="font-display text-lg font-bold text-slate-900">
-                Smile Care
+                Simran Dental Care
               </div>
-              <div className="text-xs text-slate-500">स्माइल केयर · Dental Clinic</div>
+              <div className="text-xs text-slate-500">ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್ · Dental Clinic</div>
             </div>
           </Link>
 
@@ -316,7 +318,7 @@ export default function HomePage() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
               </span>
-              Accepting new patients · Kurla West, Mumbai
+              Accepting new patients · Malleshwaram, Bengaluru
             </div>
 
             <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.1] text-slate-900 sm:text-5xl lg:text-[3.5rem]">
@@ -327,10 +329,12 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              Smile Care Clinic is a trusted, hygienic dental practice in Kurla
-              West led by <strong className="text-slate-900">Dr. Saurabh Inamadar</strong>.
-              From painless root canals to dental implants, we deliver amazing
-              service at an affordable price — and our 163+ 5★ reviews prove it.
+              Simran Dental Care is a trusted, hygienic dental practice in
+              Malleshwaram led by{" "}
+              <strong className="text-slate-900">Dr. Simran Chugh</strong>.
+              From painless root canals and braces to dental implants, we
+              deliver gentle, patient-first care at an affordable price — and
+              our 105+ 4.9★ reviews prove it.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -355,13 +359,13 @@ export default function HomePage() {
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50">
                   <span className="font-display text-xl font-bold text-amber-600">
-                    5.0
+                    4.9
                   </span>
                 </div>
                 <div>
                   <Stars />
                   <p className="mt-0.5 text-sm font-medium text-slate-700">
-                    163+ Google Reviews
+                    105+ Google Reviews
                   </p>
                 </div>
               </div>
@@ -382,9 +386,10 @@ export default function HomePage() {
 
             {/* Review quote */}
             <div className="mt-6 rounded-xl border-l-4 border-brand-500 bg-white/60 p-4 text-sm italic text-slate-700">
-              &ldquo;Literally amazing service at affordable price.&rdquo;
+              &ldquo;Her clear explanations and reassuring demeanor immediately
+              put me at ease.&rdquo;
               <span className="mt-1 block text-xs font-semibold not-italic text-slate-500">
-                — A recent 5★ Google review
+                — A 5★ Google review
               </span>
             </div>
           </div>
@@ -426,17 +431,17 @@ export default function HomePage() {
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.5rem-4px)] bg-gradient-to-br from-brand-50 to-mint-50">
                   <img
                     src="/images/doctor-and-patient.jpeg"
-                    alt="Dr. Saurabh Inamadar with a young smiling patient at Smile Care Clinic"
+                    alt="Dentist gently treating a patient in a modern dental clinic"
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="eager"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent p-5 text-white">
                     <p className="text-sm font-medium opacity-90">Led by</p>
                     <p className="font-display text-xl font-bold">
-                      Dr. Saurabh Inamadar
+                      Dr. Simran Chugh
                     </p>
                     <p className="text-xs opacity-80">
-                      BDS, MDS — Dental Surgeon & Implantologist
+                      Dental Surgeon · Painless & Gentle Care
                     </p>
                   </div>
                 </div>
@@ -452,9 +457,9 @@ export default function HomePage() {
       <section id="about" className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="About Smile Care"
-            title="A clean, welcoming dental home in Kurla"
-            subtitle="For over a decade, families across Kurla and Mumbai have trusted us with their smiles. We combine time-honored care with modern techniques and technology."
+            eyebrow="About Simran Dental Care"
+            title="A clean, welcoming dental home in Malleshwaram"
+            subtitle="Families across Malleshwaram and Bengaluru trust us with their smiles. Led by Dr. Simran Chugh (Chief Dental Surgeon, supported by Surgeon Dr. Amruth & Team), we combine gentle care with modern techniques and technology."
           />
 
           <div className="mt-14 grid gap-10 lg:grid-cols-3">
@@ -547,7 +552,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Patient Stories"
-            title="Loved by 163+ patients (5.0★)"
+            title="Loved by 105+ patients (4.9★)"
             subtitle="Here's what our patients are saying on Google."
           />
 
@@ -555,10 +560,10 @@ export default function HomePage() {
           <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-6 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 shadow-sm sm:flex-row">
             <div className="text-center">
               <div className="font-display text-5xl font-extrabold text-slate-900">
-                5.0
+                4.9
               </div>
               <Stars count={5} />
-              <div className="mt-1 text-sm text-slate-500">163 reviews</div>
+              <div className="mt-1 text-sm text-slate-500">105 reviews</div>
             </div>
             <div className="h-px w-full bg-slate-200 sm:h-16 sm:w-px" />
             <div className="flex-1 space-y-1.5">
@@ -621,7 +626,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 text-center text-sm text-slate-500">
-            Read all 163+ reviews on{" "}
+            Read all 105+ reviews on{" "}
             <a
               href={GOOGLE_MAPS_PLACE_URL}
               target="_blank"
@@ -655,7 +660,7 @@ export default function HomePage() {
 
               <ul className="mt-8 space-y-4">
                 {[
-                  "30-minute consultation or procedure booking",
+                  "15-minute consultation or procedure booking",
                   "Free consultation for first-time patients",
                   "Transparent pricing, no hidden fees",
                   "Automated calendar invite & WhatsApp reminder",
@@ -680,7 +685,7 @@ export default function HomePage() {
                 </a>
                 <p className="mt-3 flex items-start gap-2 text-sm text-slate-600">
                   <Clock size={16} className="mt-0.5 flex-shrink-0 text-slate-400" />
-                  Opens 10:30 AM Mon–Sat &bull; Kurla West, Mumbai
+                  Open · Closes 8 PM Mon–Sat &bull; Malleshwaram, Bengaluru
                 </p>
               </div>
             </div>
@@ -701,8 +706,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Visit Us"
-            title="Find Smile Care Clinic"
-            subtitle="We're located on LBS Marg in Kurla West — easy to reach by train, bus or car."
+            title="Find Simran Dental Care"
+            subtitle="We're located on East Link Road in Malleshwaram — easy to reach from across Bengaluru."
           />
 
           <div className="mt-12 grid gap-8 lg:grid-cols-5">
@@ -720,7 +725,7 @@ export default function HomePage() {
                       {address}
                     </p>
                     <p className="mt-1 text-xs text-slate-500">
-                      Plus code: 3V8F+8R Mumbai, Maharashtra
+                      Plus code: XHWF+GQ Bengaluru, Karnataka
                     </p>
                     <a
                       href={GOOGLE_MAPS_DIRECTIONS_URL}
@@ -765,7 +770,7 @@ export default function HomePage() {
                     </p>
                     <p className="mt-1 text-sm text-slate-800">{hours}</p>
                     <p className="mt-1 text-xs font-semibold text-emerald-600">
-                      Opens Saturday 10:30 AM
+                      Open · Closes 8 PM
                     </p>
                   </div>
                 </div>
@@ -781,12 +786,12 @@ export default function HomePage() {
                       Follow us
                     </p>
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/simran_dental_care_/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-1 block text-sm font-semibold text-brand-700 hover:underline"
                     >
-                      @smilecare_kurla
+                      @simran_dental_care_
                     </a>
                   </div>
                 </div>
@@ -800,14 +805,14 @@ export default function HomePage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-display font-bold text-slate-900">
-                        Smile Care Clinic
+                        Simran Dental Care
                       </span>
                       <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">
-                        5.0 ★ (163)
+                        4.9 ★ (105)
                       </span>
                     </div>
                     <p className="text-xs text-slate-500">
-                      Dental clinic &bull; Kurla West, Mumbai
+                      Dental clinic &bull; Malleshwaram, Bengaluru
                     </p>
                   </div>
 
@@ -836,7 +841,7 @@ export default function HomePage() {
                 {/* The exact Google Maps embed iframe */}
                 <div className="relative min-h-[450px] w-full flex-1 bg-slate-100">
                   <iframe
-                    title="Smile Care Clinic on Google Maps"
+                    title="Simran Dental Care on Google Maps"
                     src={GOOGLE_MAPS_EMBED_SRC}
                     width="100%"
                     height="450"
@@ -850,7 +855,7 @@ export default function HomePage() {
 
                 {/* Map card footer */}
                 <div className="border-t border-slate-100 bg-white px-4 py-2.5 text-xs text-slate-600">
-                  <span className="font-semibold text-slate-800">Landmarks:</span> Near Old Post Office &bull; Near Imperial Cycles &bull; Lal Bahadur Shastri Marg &bull; <span className="font-mono text-[11px] text-slate-500">3V8F+8R</span>
+                  <span className="font-semibold text-slate-800">Landmarks:</span> East Link Road &bull; B Street, 4th Cross Rd &bull; Malleshwaram &bull; <span className="font-mono text-[11px] text-slate-500">XHWF+GQ</span>
                 </div>
               </div>
             </div>
@@ -897,26 +902,29 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-mint-600">
-                <Smile className="h-6 w-6 text-white" />
-              </div>
+              <img
+                src="/images/simran-dc-logo.jpg"
+                alt="Simran Dental Care logo"
+                className="h-10 w-10 rounded-xl object-cover"
+              />
               <div>
                 <div className="font-display text-lg font-bold text-white">
-                  Smile Care Clinic
+                  Simran Dental Care
                 </div>
                 <div className="text-xs text-slate-400">
-                  स्माइल केयर · Kurla West, Mumbai
+                  ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್ · Malleshwaram, Bengaluru
                 </div>
               </div>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-400">
               A modern, hygienic dental clinic offering gentle, painless and
-              affordable dental care for the whole family. Led by Dr. Saurabh
-              Inamadar.
+              affordable dental care for the whole family. Led by Dr. Simran
+              Chugh, Chief Dental Surgeon (supported by Surgeon Dr. Amruth &
+              Team).
             </p>
             <div className="mt-5 flex items-center gap-2">
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-amber-400 ring-1 ring-slate-700">
-                ★ 5.0 · 163+ reviews
+                ★ 4.9 · 105+ reviews
               </span>
             </div>
           </div>
@@ -952,11 +960,11 @@ export default function HomePage() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-                <span>Kurla West, Mumbai 400070</span>
+                <span>Malleshwaram, Bengaluru 560003</span>
               </li>
               <li className="flex items-start gap-2">
                 <Clock size={14} className="mt-0.5" />
-                <span>Mon–Sat: 10:30 AM – 9 PM</span>
+                <span>Mon–Sat: 10:00 AM – 8 PM</span>
               </li>
             </ul>
           </div>
@@ -964,7 +972,7 @@ export default function HomePage() {
         <div className="border-t border-slate-800">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8">
             <p>
-              © {new Date().getFullYear()} Smile Care Clinic. All rights
+              © {new Date().getFullYear()} Simran Dental Care. All rights
               reserved. Designed by{" "}
               <a
                 href="https://www.linkedin.com/in/glen-monteiro/"

@@ -17,18 +17,20 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Smile Care Clinic | Dental Clinic in Kurla, Mumbai",
+  title: "Simran Dental Care | Dr. Simran Chugh — Dentist in Malleshwaram, Bengaluru",
   description:
-    "Smile Care Clinic (स्माइल केयर) — Trusted dental clinic in Kurla West, Mumbai. Root canal, dental implants, wisdom tooth extraction, and family dentistry. Book an appointment online.",
+    "Simran Dental Care (ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್) — Trusted dental clinic in Malleshwaram, Bengaluru led by Dr. Simran Chugh. Painless root canals, braces & aligners, implants, wisdom tooth extraction, and family dentistry. 4.9★ from 105+ Google reviews. Book an appointment online.",
   keywords: [
     "dentist",
     "dental clinic",
-    "Kurla dentist",
-    "Mumbai dentist",
+    "Malleshwaram dentist",
+    "Bengaluru dentist",
+    "dentist in Malleshwaram",
     "root canal",
     "dental implant",
-    "Smile Care",
-    "Dr Saurabh Inamadar",
+    "braces",
+    "Simran Dental Care",
+    "Dr Simran Chugh",
   ],
   // Favicon & app icons — file-based (src/app/icon.png, favicon.ico, apple-icon.png) + explicit links for Google Search
   icons: {
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Smile Care Clinic | Dental Clinic in Kurla, Mumbai",
+    title: "Simran Dental Care | Dr. Simran Chugh — Dentist in Malleshwaram, Bengaluru",
     description:
-      "Trusted dental clinic in Kurla West with 5.0★ from 163+ reviews. Painless, affordable dental care by Dr. Saurabh Inamadar.",
+      "Trusted dental clinic in Malleshwaram, Bengaluru with 4.9★ from 105+ reviews. Gentle, painless, affordable dental care by Dr. Simran Chugh.",
     type: "website",
   },
 };
