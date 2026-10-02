@@ -496,7 +496,7 @@ export default function HomePage() {
               <div className="animate-float relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 to-mint-700 p-1 shadow-2xl shadow-brand-600/30">
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.5rem-4px)] bg-gradient-to-br from-brand-50 to-mint-50">
                   <img
-                    src="/images/male-dentist-patient.jpg"
+                    src="/images/docter-pacient.png"
                     alt="Male dentist treating a patient in the dental chair at Vishnu Dental Care"
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="eager"
