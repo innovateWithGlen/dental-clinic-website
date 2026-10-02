@@ -11,28 +11,34 @@ import {
   Stethoscope,
   Baby,
   Crown,
-  Scan,
-  ArrowRight,
+  CalendarCheck,
+  ChevronRight,
+  Navigation,
+  ExternalLink,
   CheckCircle2,
   Quote,
   CreditCard,
   Accessibility,
   Bath,
-  CalendarCheck,
-  ChevronRight,
-  Navigation,
-  ExternalLink,
-  Share2,
+  ArrowRight,
+  Timer,
+  CalendarClock,
+  GraduationCap,
+  BadgeCheck,
+  Video,
+  Languages,
+  Award,
 } from "lucide-react";
+import CalBooking from "@/components/CalBooking";
+import SmileTransformations from "@/components/SmileTransformations";
+
+const GOOGLE_MAPS_SHORT_URL = "https://maps.app.goo.gl/KY9ZXvdDvM4eRSNk9";
 
 const GOOGLE_MAPS_EMBED_SRC =
-  "https://www.google.com/maps?q=Simran+Dental+Care,+1,+East+Link+Road,+B+Street,+4th+Cross+Rd,+Malleshwaram,+Bengaluru,+Karnataka+560003&output=embed";
-
-const GOOGLE_MAPS_PLACE_URL =
-  "https://www.google.com/maps/search/?api=1&query=Simran+Dental+Care+Malleshwaram+Bengaluru";
+  "https://www.google.com/maps?q=Vishnu+Dental+Care,+No+39,+Maruthi+Complex,+11th+Cross,+Vyalikaval,+Kodandarampura,+Malleshwaram,+Bengaluru,+Karnataka+560003&output=embed";
 
 const GOOGLE_MAPS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Simran+Dental+Care,+1,+East+Link+road,+B+street,+4th+Cross+Rd,+Malleshwaram,+Bengaluru,+Karnataka+560003";
+  "https://www.google.com/maps/dir/?api=1&destination=Vishnu+Dental+Care,+No+39,+Maruthi+Complex,+11th+Cross,+Vyalikaval,+Malleshwaram,+Bengaluru,+Karnataka+560003";
 
 /* Inline SVG icons for brand/social where lucide doesn't include them */
 function ToothIcon({
@@ -59,38 +65,25 @@ function ToothIcon({
   );
 }
 
-function InstagramIcon({
-  size = 18,
-  className,
-}: {
-  size?: number;
-  className?: string;
-}) {
+function LogoMark({ size = 40 }: { size?: number }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+    <img
+      src="/images/vishnu-dental-care-mark.png"
+      alt="Vishnu Dental Care logo"
       width={size}
       height={size}
-      className={className}
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
+      style={{ height: size, width: size }}
+      className="rounded-xl bg-white object-cover shadow-sm ring-1 ring-slate-200"
+    />
   );
 }
-import CalBooking from "@/components/CalBooking";
 
 /* ---------- Data ---------- */
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Smile Gallery", href: "#transformations" },
   { label: "Reviews", href: "#reviews" },
   { label: "Book", href: "#booking" },
   { label: "Contact", href: "#contact" },
@@ -100,92 +93,131 @@ const SERVICES = [
   {
     icon: ToothIcon,
     title: "Root Canal Treatment",
-    desc: "Painless root canal treatments followed by durable Zirconia crowns.",
-    highlighted: true,
-  },
-  {
-    icon: Smile,
-    title: "Braces & Clear Aligners",
-    desc: "Expert teeth alignment and braces with affordable pricing and easy EMI options.",
+    desc: "Painless root canals with natural-looking caps you can't tell apart.",
     highlighted: true,
   },
   {
     icon: Stethoscope,
-    title: "Wisdom Tooth Extraction",
-    desc: "Gentle, painless surgical extractions handled by Dr. Simran and Surgeon Dr. Amruth.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cavity Restoration & Fillings",
-    desc: "Quick, natural-looking tooth-coloured restorations and fillings.",
+    title: "Wisdom Tooth Removal",
+    desc: "Gentle, pain-free surgical extractions with clear after-care guidance.",
+    highlighted: true,
   },
   {
     icon: Crown,
     title: "Dental Implants",
-    desc: "Permanent, natural-looking tooth replacements with a gentle, painless approach.",
+    desc: "Permanent, natural-looking replacements for missing teeth & bridges.",
+    highlighted: true,
   },
   {
-    icon: Sparkles,
-    title: "Scaling & Teeth Whitening",
-    desc: "Deep cleaning, polishing, and whitening using modern diagnostic tech.",
+    icon: ShieldCheck,
+    title: "Cavity Filling",
+    desc: "Quick, seamless tooth-coloured fillings and restorations.",
+    highlighted: true,
+  },
+  {
+    icon: HeartPulse,
+    title: "Painless Procedures",
+    desc: "Modern anesthesia and gentle techniques for anxiety-free visits.",
+    highlighted: false,
+  },
+  {
+    icon: Timer,
+    title: "Punctual Appointments",
+    desc: "On-time slots that respect your schedule — no long waiting.",
+    highlighted: false,
   },
   {
     icon: Baby,
-    title: "Family & Pediatric Care",
-    desc: "Gentle check-ups, fillings, and emergency tooth care for kids, adults, and seniors.",
+    title: "Family Clinic",
+    desc: "Trusted care for kids, adults & seniors — whole families visit us.",
+    highlighted: false,
   },
   {
-    icon: Scan,
-    title: "Advanced Diagnostics",
-    desc: "Modern equipment with clear, patient-friendly explanations of every step.",
+    icon: Sparkles,
+    title: "Sanitized Equipment",
+    desc: "Strict sterilization and a spotless, well-maintained clinic.",
+    highlighted: false,
+  },
+  {
+    icon: CalendarClock,
+    title: "Flexible Scheduling",
+    desc: "Easy booking and rescheduling that fits around your availability.",
+    highlighted: false,
   },
 ];
 
 const HIGHLIGHTS = [
   {
     icon: ShieldCheck,
-    title: "Sterile & Hygienic",
-    desc: "Strict autoclave sterilization & clean, well-maintained facility.",
+    title: "Sanitized & Sterile",
+    desc: "Strict sterilization, sanitized equipment & a spotless facility.",
   },
   {
     icon: HeartPulse,
     title: "Painless Procedures",
-    desc: "Modern anesthesia and gentle techniques for anxiety-free visits.",
+    desc: "Gentle, anxiety-free dentistry — even nervous patients feel at ease.",
   },
   {
     icon: Star,
     title: "4.9★ on Google",
-    desc: "105+ glowing reviews from patients across Bengaluru.",
+    desc: "113 glowing reviews from patients across Bengaluru.",
   },
   {
-    icon: CreditCard,
-    title: "Affordable & Transparent",
-    desc: "Upfront pricing, value for money, multiple payment options.",
+    icon: Baby,
+    title: "Family Clinic",
+    desc: "Punctual appointments with flexible scheduling for the whole family.",
   },
 ];
 
 const REVIEWS = [
   {
-    name: "Syed Reheman",
-    time: "4 months ago",
-    badge: "Local Guide",
-    rating: 5,
-    text:
-      "I had an excellent experience at Dr. Simran's clinic in Malleshwaram. Simran is very humble and polite, she takes time to explain treatment options clearly and answering all the questions.",
+    name: "G Somesh",
+    meta: "4 reviews",
+    time: "a month ago",
+    text: "Exceptional and comforting care! As someone who gets anxious at the dentist, Dr. Sriram @ Vishnu Dental Care completely put me at ease. He took the time to listen, explained every step, and delivered a completely painless procedure.",
   },
   {
-    name: "Suman Sarode",
-    time: "3 months ago",
-    rating: 5,
-    text:
-      "I am very happy with my braces treatment. The orthodontist is knowledgeable, patient, and always takes the time to answer my questions. Appointments are well-managed, and the clinic maintains high standards of hygiene.",
+    name: "Joseph Souza",
+    meta: "2 reviews",
+    time: "a month ago",
+    text: "It was really wonderful experience with all expertise, the service given was really very good. Doctor was very kind and hospitable. I would highly recommend those in need of dental help. Thank you.",
   },
   {
-    name: "Dr. Anirudh Kulkarni",
-    badge: "Local Guide",
-    rating: 5,
-    text:
-      "As a dentist myself, got my treatment done here by Dr. Simran. Had a very quick and painless procedure here for my tooth cavity. Most recommended!",
+    name: "Samarth Sriram",
+    meta: "4 reviews",
+    time: "a month ago",
+    text: "It was a wonderful experience, great doctor, has a lot of patience. Overall one of the best clinics in Bangalore.",
+  },
+  {
+    name: "Sahana Pai",
+    meta: "Local Guide · 18 reviews",
+    time: "a year ago",
+    text: "Very good doctor. Got my wisdom tooth extracted and my teeth cleaned here. You can book an appointment with the receptionist before visiting.",
+  },
+  {
+    name: "Gautam Nandakumar",
+    meta: "Local Guide · 12 reviews",
+    time: "4 years ago",
+    text: "It was my 1st experience at a dental clinic ever, so I was a bit nervous. But to my surprise it was a very pain free & nice experience. Dr. Sriram makes you feel absolutely comfortable & explains everything with a lot of knowledge.",
+  },
+  {
+    name: "Priya Rai",
+    meta: "Local Guide · 23 reviews",
+    time: "6 years ago",
+    text: "I happened to visit Vishnu Dental Clinic just by chance and till date don't regret it. My entire family goes here. The clinic is absolutely spotless and makes my visit there very satisfying.",
+  },
+  {
+    name: "Govind Samtani",
+    meta: "Local Guide · 74 reviews",
+    time: "2 years ago",
+    text: "Root canal has become so easy that you don't feel any pain. Added to this, the cap that is fixed is so natural that you cannot make out that it has been fixed. On the whole I am a most satisfied patient.",
+    ownerResponse: "Thank u sir for your kind review",
+  },
+  {
+    name: "Nisarg Shah",
+    meta: "Local Guide · 11 reviews",
+    time: "3 years ago",
+    text: "I visited Dr. Sriram's clinic for root canals, teeth implant, and bridges. All the appointments were very smooth, painless, and perfectly done. There was enough flexibility to schedule appointments as per availability. Would highly recommend Vishnu Dental Care for all your dental needs.",
   },
 ];
 
@@ -253,11 +285,46 @@ function SectionHeader({
   );
 }
 
+function ReviewCard({ r }: { r: (typeof REVIEWS)[number] }) {
+  return (
+    <figure className="relative flex w-[300px] flex-shrink-0 flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:w-[360px]">
+      <Quote size={28} className="absolute right-5 top-5 text-brand-100" />
+      <Stars count={5} />
+      <blockquote className="mt-4 line-clamp-6 text-sm leading-relaxed text-slate-700">
+        &ldquo;{r.text}&rdquo;
+      </blockquote>
+      {r.ownerResponse ? (
+        <p className="mt-3 rounded-lg bg-slate-50 px-3 py-2 text-xs italic text-slate-600">
+          <span className="font-semibold not-italic text-slate-800">
+            Response from owner:{" "}
+          </span>
+          {r.ownerResponse}
+        </p>
+      ) : null}
+      <figcaption className="mt-4 flex items-center gap-3 border-t border-slate-100 pt-4">
+        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-mint-600 text-sm font-semibold text-white">
+          {r.name
+            .split(" ")
+            .map((w) => w[0])
+            .slice(0, 2)
+            .join("")}
+        </div>
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-slate-900">{r.name}</p>
+          <p className="truncate text-xs text-slate-500">
+            {r.meta} · {r.time}
+          </p>
+        </div>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function HomePage() {
-  const phone = "+918073876563";
-  const phoneDisplay = "080738 76563";
+  const phone = "+919880205670";
+  const phoneDisplay = "98802 05670";
   const address =
-    "1, East Link Road, B Street, 4th Cross Rd, Malleshwaram, Bengaluru, Karnataka 560003";
+    "No 39, Maruthi Complex, 11th Cross, above Mahaveer Ayurvedics, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003";
   const hours = "Mon–Sat: 10:00 AM – 8:00 PM · Sun: Closed";
 
   return (
@@ -266,16 +333,12 @@ export default function HomePage() {
       <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2.5">
-            <img
-              src="/images/simran-dc-logo.jpg"
-              alt="Simran Dental Care logo"
-              className="h-10 w-10 rounded-xl object-cover shadow-sm"
-            />
+            <LogoMark />
             <div className="leading-tight">
               <div className="font-display text-lg font-bold text-slate-900">
-                Simran Dental Care
+                Vishnu Dental Care
               </div>
-              <div className="text-xs text-slate-500">ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್ · Dental Clinic</div>
+              <div className="text-xs text-slate-500">Family Dental Clinic · Malleshwaram</div>
             </div>
           </Link>
 
@@ -329,12 +392,15 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              Simran Dental Care is a trusted, hygienic dental practice in
+              Vishnu Dental Care is a trusted family dental clinic in
               Malleshwaram led by{" "}
-              <strong className="text-slate-900">Dr. Simran Chugh</strong>.
-              From painless root canals and braces to dental implants, we
-              deliver gentle, patient-first care at an affordable price — and
-              our 105+ 4.9★ reviews prove it.
+              <strong className="text-slate-900">
+                Dr. Sriram Prabhu (B.D.S., F.A.G.E.)
+              </strong>
+              , Dental Surgeon with 25 years of experience. From painless root
+              canals, wisdom tooth removal and implants to cavity
+              fillings — we deliver gentle, sanitized, punctual care with
+              flexible scheduling, and our 113 4.9★ reviews prove it.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -365,7 +431,7 @@ export default function HomePage() {
                 <div>
                   <Stars />
                   <p className="mt-0.5 text-sm font-medium text-slate-700">
-                    105+ Google Reviews
+                    113 Google Reviews
                   </p>
                 </div>
               </div>
@@ -373,23 +439,23 @@ export default function HomePage() {
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <CheckCircle2 size={18} className="text-emerald-500" />
                 <span>
-                  <span className="font-semibold text-slate-900">15+ years</span> of
-                  clinical excellence
+                  <span className="font-semibold text-slate-900">Painless</span> &
+                  gentle dentistry
                 </span>
               </div>
               <div className="h-10 w-px bg-slate-200" />
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <ShieldCheck size={18} className="text-emerald-500" />
-                <span>Sterile, hygienic facility</span>
+                <span>Sanitized, hygienic facility</span>
               </div>
             </div>
 
             {/* Review quote */}
             <div className="mt-6 rounded-xl border-l-4 border-brand-500 bg-white/60 p-4 text-sm italic text-slate-700">
-              &ldquo;Her clear explanations and reassuring demeanor immediately
-              put me at ease.&rdquo;
+              &ldquo;Exceptional and comforting care! Dr. Sriram completely put
+              me at ease — a completely painless procedure.&rdquo;
               <span className="mt-1 block text-xs font-semibold not-italic text-slate-500">
-                — A 5★ Google review
+                — G Somesh · 5★ Google review
               </span>
             </div>
           </div>
@@ -430,18 +496,18 @@ export default function HomePage() {
               <div className="animate-float relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 to-mint-700 p-1 shadow-2xl shadow-brand-600/30">
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.5rem-4px)] bg-gradient-to-br from-brand-50 to-mint-50">
                   <img
-                    src="/images/doctor-and-patient.jpeg"
-                    alt="Dentist gently treating a patient in a modern dental clinic"
+                    src="/images/male-dentist-patient.jpg"
+                    alt="Male dentist treating a patient in the dental chair at Vishnu Dental Care"
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="eager"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent p-5 text-white">
                     <p className="text-sm font-medium opacity-90">Led by</p>
                     <p className="font-display text-xl font-bold">
-                      Dr. Simran Chugh
+                      Dr. Sriram Prabhu
                     </p>
                     <p className="text-xs opacity-80">
-                      Dental Surgeon · Painless & Gentle Care
+                      B.D.S., F.A.G.E · Dental Surgeon · 25 yrs experience
                     </p>
                   </div>
                 </div>
@@ -457,12 +523,65 @@ export default function HomePage() {
       <section id="about" className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="About Simran Dental Care"
-            title="A clean, welcoming dental home in Malleshwaram"
-            subtitle="Families across Malleshwaram and Bengaluru trust us with their smiles. Led by Dr. Simran Chugh (Chief Dental Surgeon, supported by Surgeon Dr. Amruth & Team), we combine gentle care with modern techniques and technology."
+            eyebrow="About Vishnu Dental Care"
+            title="A clean, welcoming family clinic in Malleshwaram"
+            subtitle="Families across Malleshwaram and Bengaluru trust Dr. Sriram Prabhu with their smiles. We combine gentle, painless techniques with sanitized equipment, punctual appointments and flexible scheduling."
           />
 
-          <div className="mt-14 grid gap-10 lg:grid-cols-3">
+          {/* Meet the doctor */}
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-brand-50/50 shadow-sm">
+            <div className="grid gap-0 sm:grid-cols-5">
+              <div className="flex items-center justify-center bg-gradient-to-br from-brand-600 to-mint-700 p-8 sm:col-span-2">
+                <div className="text-center text-white">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/20 font-display text-3xl font-bold ring-2 ring-white/60">
+                    SP
+                  </div>
+                  <p className="mt-4 font-display text-xl font-bold">
+                    Dr. Sriram Prabhu
+                  </p>
+                  <p className="mt-1 text-sm text-white/85">
+                    B.D.S., F.A.G.E
+                  </p>
+                  <p className="mt-0.5 text-sm font-semibold text-white">
+                    Dental Surgeon · Bangalore
+                  </p>
+                </div>
+              </div>
+              <div className="p-8 sm:col-span-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">
+                  Meet your dentist
+                </p>
+                <ul className="mt-4 space-y-3 text-sm text-slate-700">
+                  <li className="flex items-start gap-2.5">
+                    <GraduationCap size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Qualification:</strong> B.D.S., F.A.G.E</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Award size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Experience:</strong> 25 years overall</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Stethoscope size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Specialisation:</strong> Dental Surgeon</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <BadgeCheck size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Registration:</strong> 11425-A, Karnataka State Dental Council (2001)</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Languages size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Languages:</strong> English</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Video size={17} className="mt-0.5 flex-shrink-0 text-brand-700" />
+                    <span><strong>Consultations:</strong> In-clinic visits & video consultation</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((h) => {
               const Icon = h.icon;
               return (
@@ -494,10 +613,10 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="Our Services"
             title="Complete dental care under one roof"
-            subtitle="From routine checkups to advanced surgical procedures, we offer a full spectrum of dental services tailored to your needs."
+            subtitle="From painless root canals and wisdom tooth removal to implants and cavity fillings — plus punctual, family-friendly care with sanitized equipment and flexible scheduling."
           />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => {
               const Icon = s.icon;
               return (
@@ -547,12 +666,26 @@ export default function HomePage() {
 
       <div className="section-divider" />
 
+      {/* ============ BEFORE / AFTER ============ */}
+      <section id="transformations" className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Smile Transformations"
+            title="Drag to compare before & after"
+            subtitle="Explore real treatment outcomes — root canals, wisdom tooth removal, implants and cavity fillings. Slide the handle to see the difference gentle, expert care makes."
+          />
+          <SmileTransformations />
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
       {/* ============ REVIEWS ============ */}
-      <section id="reviews" className="py-20 sm:py-24">
+      <section id="reviews" className="overflow-hidden py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Patient Stories"
-            title="Loved by 105+ patients (4.9★)"
+            title="Loved by 113 patients (4.9★)"
             subtitle="Here's what our patients are saying on Google."
           />
 
@@ -563,7 +696,7 @@ export default function HomePage() {
                 4.9
               </div>
               <Stars count={5} />
-              <div className="mt-1 text-sm text-slate-500">105 reviews</div>
+              <div className="mt-1 text-sm text-slate-500">113 reviews</div>
             </div>
             <div className="h-px w-full bg-slate-200 sm:h-16 sm:w-px" />
             <div className="flex-1 space-y-1.5">
@@ -583,59 +716,43 @@ export default function HomePage() {
                 );
               })}
             </div>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {REVIEWS.map((r) => (
-              <figure
-                key={r.name}
-                className="relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
-              >
-                <Quote
-                  size={28}
-                  className="absolute right-5 top-5 text-brand-100"
-                />
-                <Stars count={r.rating} />
-                <blockquote className="mt-4 text-sm leading-relaxed text-slate-700">
-                  &ldquo;{r.text}&rdquo;
-                </blockquote>
-                <figcaption className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-mint-600 font-semibold text-white">
-                    {r.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-semibold text-slate-900">
-                        {r.name}
-                      </p>
-                      {r.badge ? (
-                        <span className="rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-700">
-                          {r.badge}
-                        </span>
-                      ) : null}
-                    </div>
-                    <p className="text-xs text-slate-500">{r.time}</p>
-                  </div>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center text-sm text-slate-500">
-            Read all 105+ reviews on{" "}
             <a
-              href={GOOGLE_MAPS_PLACE_URL}
+              href={GOOGLE_MAPS_SHORT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-semibold text-brand-700 underline-offset-2 hover:underline"
+              className="inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-700"
             >
-              Google Maps <ExternalLink size={13} />
+              See all reviews <ExternalLink size={14} />
             </a>
           </div>
+        </div>
+
+        {/* Infinite marquee — duplicated list for a seamless right→left loop */}
+        <div className="reviews-marquee relative mt-12 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" />
+          <div className="reviews-marquee-track flex w-max gap-6 px-4">
+            {REVIEWS.map((r) => (
+              <ReviewCard key={`a-${r.name}`} r={r} />
+            ))}
+            {REVIEWS.map((r) => (
+              <div key={`b-${r.name}`} aria-hidden="true">
+                <ReviewCard r={r} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-8 max-w-7xl px-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+          Read all 113 reviews on{" "}
+          <a
+            href={GOOGLE_MAPS_SHORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-semibold text-brand-700 underline-offset-2 hover:underline"
+          >
+            Google Maps <ExternalLink size={13} />
+          </a>
         </div>
       </section>
 
@@ -660,11 +777,12 @@ export default function HomePage() {
 
               <ul className="mt-8 space-y-4">
                 {[
-                  "15-minute consultation or procedure booking",
-                  "Free consultation for first-time patients",
+                  "Painless consultation & treatment options",
+                  "In-clinic visits & video consultation",
+                  "Punctual slots with flexible rescheduling",
                   "Transparent pricing, no hidden fees",
-                  "Automated calendar invite & WhatsApp reminder",
-                  "Flexible rescheduling if plans change",
+                  "Automated calendar invite & reminder",
+                  "Family-friendly, sanitized clinic",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-500" />
@@ -706,8 +824,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Visit Us"
-            title="Find Simran Dental Care"
-            subtitle="We're located on East Link Road in Malleshwaram — easy to reach from across Bengaluru."
+            title="Find Vishnu Dental Care"
+            subtitle="We're above Mahaveer Ayurvedics at Maruthi Complex, 11th Cross, Vyalikaval — easy to reach from across Malleshwaram & Bengaluru."
           />
 
           <div className="mt-12 grid gap-8 lg:grid-cols-5">
@@ -723,9 +841,6 @@ export default function HomePage() {
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-slate-800">
                       {address}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-500">
-                      Plus code: XHWF+GQ Bengaluru, Karnataka
                     </p>
                     <a
                       href={GOOGLE_MAPS_DIRECTIONS_URL}
@@ -779,19 +894,22 @@ export default function HomePage() {
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                    <InstagramIcon size={18} />
+                    <Star size={18} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      Follow us
+                      Google reviews
+                    </p>
+                    <p className="mt-1 text-sm font-semibold text-slate-900">
+                      4.9 ★ · 113 reviews
                     </p>
                     <a
-                      href="https://www.instagram.com/simran_dental_care_/"
+                      href={GOOGLE_MAPS_SHORT_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-1 block text-sm font-semibold text-brand-700 hover:underline"
                     >
-                      @simran_dental_care_
+                      See all reviews on Google Maps &rarr;
                     </a>
                   </div>
                 </div>
@@ -805,10 +923,10 @@ export default function HomePage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-display font-bold text-slate-900">
-                        Simran Dental Care
+                        Vishnu Dental Care
                       </span>
                       <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">
-                        4.9 ★ (105)
+                        4.9 ★ (113)
                       </span>
                     </div>
                     <p className="text-xs text-slate-500">
@@ -827,7 +945,7 @@ export default function HomePage() {
                       Directions
                     </a>
                     <a
-                      href={GOOGLE_MAPS_PLACE_URL}
+                      href={GOOGLE_MAPS_SHORT_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-brand-500 hover:text-brand-700"
@@ -841,7 +959,7 @@ export default function HomePage() {
                 {/* The exact Google Maps embed iframe */}
                 <div className="relative min-h-[450px] w-full flex-1 bg-slate-100">
                   <iframe
-                    title="Simran Dental Care on Google Maps"
+                    title="Vishnu Dental Care on Google Maps"
                     src={GOOGLE_MAPS_EMBED_SRC}
                     width="100%"
                     height="450"
@@ -855,7 +973,7 @@ export default function HomePage() {
 
                 {/* Map card footer */}
                 <div className="border-t border-slate-100 bg-white px-4 py-2.5 text-xs text-slate-600">
-                  <span className="font-semibold text-slate-800">Landmarks:</span> East Link Road &bull; B Street, 4th Cross Rd &bull; Malleshwaram &bull; <span className="font-mono text-[11px] text-slate-500">XHWF+GQ</span>
+                  <span className="font-semibold text-slate-800">Landmarks:</span> Maruthi Complex, 11th Cross &bull; Above Mahaveer Ayurvedics &bull; Vyalikaval, Malleshwaram
                 </div>
               </div>
             </div>
@@ -897,34 +1015,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ============ CTA STRIP ============ */}
+      <section className="border-t border-slate-200 bg-slate-900 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-4 sm:px-6 lg:flex-row lg:px-8">
+          <div className="text-center lg:text-left">
+            <p className="font-display text-xl font-bold text-white">
+              Ready for a healthier, pain-free smile?
+            </p>
+            <p className="mt-1 text-sm text-slate-400">
+              Call {phoneDisplay} or book online — we&apos;ll take care of the rest.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#booking"
+              className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              <Smile size={16} /> Book Appointment
+            </a>
+            <a
+              href={GOOGLE_MAPS_SHORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white"
+            >
+              <Star size={16} /> 4.9★ · 113 Reviews
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ============ FOOTER ============ */}
-      <footer className="border-t border-slate-200 bg-slate-900 text-slate-300">
+      <footer className="border-t border-slate-800 bg-slate-900 text-slate-300">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-3">
               <img
-                src="/images/simran-dc-logo.jpg"
-                alt="Simran Dental Care logo"
-                className="h-10 w-10 rounded-xl object-cover"
+                src="/images/vishnu-dental-care-logo.png"
+                alt="Vishnu Dental Care logo"
+                className="h-16 w-auto rounded-xl bg-white px-3 py-2 shadow-sm"
               />
-              <div>
-                <div className="font-display text-lg font-bold text-white">
-                  Simran Dental Care
-                </div>
-                <div className="text-xs text-slate-400">
-                  ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್ · Malleshwaram, Bengaluru
-                </div>
+              <div className="text-xs leading-relaxed text-slate-400">
+                Family Dental Clinic
+                <br />
+                Malleshwaram, Bengaluru
               </div>
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-400">
-              A modern, hygienic dental clinic offering gentle, painless and
-              affordable dental care for the whole family. Led by Dr. Simran
-              Chugh, Chief Dental Surgeon (supported by Surgeon Dr. Amruth &
-              Team).
+              A modern, sanitized family dental clinic offering gentle, painless
+              and affordable dental care. Led by Dr. Sriram Prabhu (B.D.S.,
+              F.A.G.E), Dental Surgeon with 25 years of experience — root canals,
+              wisdom tooth removal, implants, cavity fillings & more, with
+              punctual appointments and flexible scheduling.
             </p>
             <div className="mt-5 flex items-center gap-2">
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-semibold text-amber-400 ring-1 ring-slate-700">
-                ★ 4.9 · 105+ reviews
+                ★ 4.9 · 113 reviews
               </span>
             </div>
           </div>
@@ -960,7 +1106,7 @@ export default function HomePage() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0" />
-                <span>Malleshwaram, Bengaluru 560003</span>
+                <span>No 39, Maruthi Complex, 11th Cross, Vyalikaval, Malleshwaram, Bengaluru 560003</span>
               </li>
               <li className="flex items-start gap-2">
                 <Clock size={14} className="mt-0.5" />
@@ -972,7 +1118,7 @@ export default function HomePage() {
         <div className="border-t border-slate-800">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8">
             <p>
-              © {new Date().getFullYear()} Simran Dental Care. All rights
+              © {new Date().getFullYear()} Vishnu Dental Care. All rights
               reserved. Designed by{" "}
               <a
                 href="https://www.linkedin.com/in/glen-monteiro/"

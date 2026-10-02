@@ -76,3 +76,57 @@ iframe[id*="cal-embed"] {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Seamless infinite reviews marquee (right → left).
+   The track contains the list duplicated exactly 2x and animates
+   translateX(0 → -50%), so the 1st card follows the last with no gap/lag. */
+@keyframes reviews-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.reviews-marquee-track {
+  animation: reviews-marquee 70s linear infinite;
+  will-change: transform;
+}
+.reviews-marquee:hover .reviews-marquee-track {
+  animation-play-state: paused;
+}
+@media (max-width: 640px) {
+  .reviews-marquee-track {
+    animation-duration: 45s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee-track {
+    animation: none;
+  }
+}
+
+/* Before/After range slider */
+.before-after-range {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #78716c 0%, #0891b2 100%);
+  outline: none;
+  cursor: pointer;
+}
+.before-after-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #0891b2;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+.before-after-range::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 2px solid #0891b2;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}

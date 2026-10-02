@@ -17,9 +17,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Simran Dental Care | Dr. Simran Chugh — Dentist in Malleshwaram, Bengaluru",
+  title: "Vishnu Dental Care | Dr. Sriram Prabhu — Dentist in Malleshwaram, Bengaluru",
   description:
-    "Simran Dental Care (ಸಿಮ್ರಾನ್ ಡೆಂಟಲ್ ಕೇರ್) — Trusted dental clinic in Malleshwaram, Bengaluru led by Dr. Simran Chugh. Painless root canals, braces & aligners, implants, wisdom tooth extraction, and family dentistry. 4.9★ from 105+ Google reviews. Book an appointment online.",
+    "Vishnu Dental Care — Trusted family dental clinic in Malleshwaram, Bengaluru led by Dr. Sriram Prabhu (B.D.S., F.A.G.E), Dental Surgeon with 25 years of experience. Painless root canals, wisdom tooth removal, dental implants, cavity fillings & family dentistry. 4.9★ from 113 Google reviews. Book an appointment online.",
   keywords: [
     "dentist",
     "dental clinic",
@@ -28,23 +28,25 @@ export const metadata: Metadata = {
     "dentist in Malleshwaram",
     "root canal",
     "dental implant",
-    "braces",
-    "Simran Dental Care",
-    "Dr Simran Chugh",
+    "wisdom tooth removal",
+    "cavity filling",
+    "Vishnu Dental Care",
+    "Dr Sriram Prabhu",
   ],
-  // Favicon & app icons — file-based (src/app/icon.png, favicon.ico, apple-icon.png) + explicit links for Google Search
+  // Favicon & app icons — served from public/ with a version query to bust
+  // stale browser favicon caches after the Simran → Vishnu rebrand.
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "48x48" },
-      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=2", sizes: "48x48" },
+      { url: "/favicon.png?v=2", type: "image/png", sizes: "512x512" },
+      { url: "/icon.png?v=2", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Simran Dental Care | Dr. Simran Chugh — Dentist in Malleshwaram, Bengaluru",
+    title: "Vishnu Dental Care | Dr. Sriram Prabhu — Dentist in Malleshwaram, Bengaluru",
     description:
-      "Trusted dental clinic in Malleshwaram, Bengaluru with 4.9★ from 105+ reviews. Gentle, painless, affordable dental care by Dr. Simran Chugh.",
+      "Trusted family dental clinic in Malleshwaram, Bengaluru with 4.9★ from 113 reviews. Gentle, painless, sanitized dental care by Dr. Sriram Prabhu (B.D.S., F.A.G.E).",
     type: "website",
   },
 };

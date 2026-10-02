@@ -274,8 +274,8 @@ export default function CalBooking() {
             </div>
             <p className="text-xs text-slate-400">
               Or call us at{" "}
-              <a href="tel:+918073876563" className="font-semibold text-brand-700 hover:underline">
-                080738 76563
+              <a href="tel:+919880205670" className="font-semibold text-brand-700 hover:underline">
+                98802 05670
               </a>
             </p>
           </div>
