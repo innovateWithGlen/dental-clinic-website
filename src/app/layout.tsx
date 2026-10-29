@@ -17,9 +17,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Vishnu Dental Care | Dr. Sriram Prabhu — Dentist in Malleshwaram, Bengaluru",
+  title: "Dental Care | Dr. Arjun Mehra — Dentist in Malleshwaram, Bengaluru",
   description:
-    "Vishnu Dental Care — Trusted family dental clinic in Malleshwaram, Bengaluru led by Dr. Sriram Prabhu (B.D.S., F.A.G.E), Dental Surgeon with 25 years of experience. Painless root canals, wisdom tooth removal, dental implants, cavity fillings & family dentistry. 4.9★ from 113 Google reviews. Book an appointment online.",
+    "Dental Care — Trusted family dental clinic in Malleshwaram, Bengaluru led by Dr. Arjun Mehra (B.D.S., F.A.G.E), Dental Surgeon with 25 years of experience. Painless root canals, wisdom tooth removal, dental implants, cavity fillings & family dentistry. 4.9★ from 113 Google reviews. Book an appointment online.",
   keywords: [
     "dentist",
     "dental clinic",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "dental implant",
     "wisdom tooth removal",
     "cavity filling",
-    "Vishnu Dental Care",
-    "Dr Sriram Prabhu",
+    "Dental Care",
+    "Dr Arjun Mehra",
   ],
   // Favicon & app icons — served from public/ with a version query to bust
   // stale browser favicon caches after the Simran → Vishnu rebrand.
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: "Vishnu Dental Care | Dr. Sriram Prabhu — Dentist in Malleshwaram, Bengaluru",
+    title: "Dental Care | Dr. Arjun Mehra — Dentist in Malleshwaram, Bengaluru",
     description:
-      "Trusted family dental clinic in Malleshwaram, Bengaluru with 4.9★ from 113 reviews. Gentle, painless, sanitized dental care by Dr. Sriram Prabhu (B.D.S., F.A.G.E).",
+      "Trusted family dental clinic in Malleshwaram, Bengaluru with 4.9★ from 113 reviews. Gentle, painless, sanitized dental care by Dr. Arjun Mehra (B.D.S., F.A.G.E).",
     type: "website",
   },
 };

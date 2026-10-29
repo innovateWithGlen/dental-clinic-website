@@ -69,7 +69,7 @@ function LogoMark({ size = 40 }: { size?: number }) {
   return (
     <img
       src="/images/vishnu-dental-care-mark.png"
-      alt="Vishnu Dental Care logo"
+      alt="Dental Care logo"
       width={size}
       height={size}
       style={{ height: size, width: size }}
@@ -174,7 +174,7 @@ const REVIEWS = [
     name: "G Somesh",
     meta: "4 reviews",
     time: "a month ago",
-    text: "Exceptional and comforting care! As someone who gets anxious at the dentist, Dr. Sriram @ Vishnu Dental Care completely put me at ease. He took the time to listen, explained every step, and delivered a completely painless procedure.",
+    text: "Exceptional and comforting care! As someone who gets anxious at the dentist, Dr. Sriram @ Dental Care completely put me at ease. He took the time to listen, explained every step, and delivered a completely painless procedure.",
   },
   {
     name: "Joseph Souza",
@@ -217,7 +217,7 @@ const REVIEWS = [
     name: "Nisarg Shah",
     meta: "Local Guide · 11 reviews",
     time: "3 years ago",
-    text: "I visited Dr. Sriram's clinic for root canals, teeth implant, and bridges. All the appointments were very smooth, painless, and perfectly done. There was enough flexibility to schedule appointments as per availability. Would highly recommend Vishnu Dental Care for all your dental needs.",
+    text: "I visited Dr. Sriram's clinic for root canals, teeth implant, and bridges. All the appointments were very smooth, painless, and perfectly done. There was enough flexibility to schedule appointments as per availability. Would highly recommend Dental Care for all your dental needs.",
   },
 ];
 
@@ -321,8 +321,8 @@ function ReviewCard({ r }: { r: (typeof REVIEWS)[number] }) {
 }
 
 export default function HomePage() {
-  const phone = "+919880205670";
-  const phoneDisplay = "98802 05670";
+  const phone = "+919353678546";
+  const phoneDisplay = "93536 78546";
   const address =
     "No 39, Maruthi Complex, 11th Cross, above Mahaveer Ayurvedics, Vyalikaval, Kodandarampura, Malleshwaram, Bengaluru, Karnataka 560003";
   const hours = "Mon–Sat: 10:00 AM – 8:00 PM · Sun: Closed";
@@ -336,7 +336,7 @@ export default function HomePage() {
             <LogoMark />
             <div className="leading-tight">
               <div className="font-display text-lg font-bold text-slate-900">
-                Vishnu Dental Care
+                Dental Care
               </div>
               <div className="text-xs text-slate-500">Family Dental Clinic · Malleshwaram</div>
             </div>
@@ -392,10 +392,10 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
-              Vishnu Dental Care is a trusted family dental clinic in
+              Dental Care is a trusted family dental clinic in
               Malleshwaram led by{" "}
               <strong className="text-slate-900">
-                Dr. Sriram Prabhu (B.D.S., F.A.G.E.)
+                Dr. Arjun Mehra (B.D.S., F.A.G.E.)
               </strong>
               , Dental Surgeon with 25 years of experience. From painless root
               canals, wisdom tooth removal and implants to cavity
@@ -497,14 +497,14 @@ export default function HomePage() {
                 <div className="relative h-full w-full overflow-hidden rounded-[calc(1.5rem-4px)] bg-gradient-to-br from-brand-50 to-mint-50">
                   <img
                     src="/images/docter-pacient.png"
-                    alt="Male dentist treating a patient in the dental chair at Vishnu Dental Care"
+                    alt="Male dentist treating a patient in the dental chair at Dental Care"
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="eager"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent p-5 text-white">
                     <p className="text-sm font-medium opacity-90">Led by</p>
                     <p className="font-display text-xl font-bold">
-                      Dr. Sriram Prabhu
+                      Dr. Arjun Mehra
                     </p>
                     <p className="text-xs opacity-80">
                       B.D.S., F.A.G.E · Dental Surgeon · 25 yrs experience
@@ -523,9 +523,9 @@ export default function HomePage() {
       <section id="about" className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            eyebrow="About Vishnu Dental Care"
+            eyebrow="About Dental Care"
             title="A clean, welcoming family clinic in Malleshwaram"
-            subtitle="Families across Malleshwaram and Bengaluru trust Dr. Sriram Prabhu with their smiles. We combine gentle, painless techniques with sanitized equipment, punctual appointments and flexible scheduling."
+            subtitle="Families across Malleshwaram and Bengaluru trust Dr. Arjun Mehra with their smiles. We combine gentle, painless techniques with sanitized equipment, punctual appointments and flexible scheduling."
           />
 
           {/* Meet the doctor */}
@@ -534,10 +534,10 @@ export default function HomePage() {
               <div className="flex items-center justify-center bg-gradient-to-br from-brand-600 to-mint-700 p-8 sm:col-span-2">
                 <div className="text-center text-white">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/20 font-display text-3xl font-bold ring-2 ring-white/60">
-                    SP
+                    AM
                   </div>
                   <p className="mt-4 font-display text-xl font-bold">
-                    Dr. Sriram Prabhu
+                    Dr. Arjun Mehra
                   </p>
                   <p className="mt-1 text-sm text-white/85">
                     B.D.S., F.A.G.E
@@ -824,7 +824,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Visit Us"
-            title="Find Vishnu Dental Care"
+            title="Find Dental Care"
             subtitle="We're above Mahaveer Ayurvedics at Maruthi Complex, 11th Cross, Vyalikaval — easy to reach from across Malleshwaram & Bengaluru."
           />
 
@@ -923,7 +923,7 @@ export default function HomePage() {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-display font-bold text-slate-900">
-                        Vishnu Dental Care
+                        Dental Care
                       </span>
                       <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold text-emerald-800">
                         4.9 ★ (113)
@@ -959,7 +959,7 @@ export default function HomePage() {
                 {/* The exact Google Maps embed iframe */}
                 <div className="relative min-h-[450px] w-full flex-1 bg-slate-100">
                   <iframe
-                    title="Vishnu Dental Care on Google Maps"
+                    title="Dental Care on Google Maps"
                     src={GOOGLE_MAPS_EMBED_SRC}
                     width="100%"
                     height="450"
@@ -1052,7 +1052,7 @@ export default function HomePage() {
             <div className="flex items-center gap-3">
               <img
                 src="/images/vishnu-dental-care-logo.png"
-                alt="Vishnu Dental Care logo"
+                alt="Dental Care logo"
                 className="h-16 w-auto rounded-xl bg-white px-3 py-2 shadow-sm"
               />
               <div className="text-xs leading-relaxed text-slate-400">
@@ -1063,7 +1063,7 @@ export default function HomePage() {
             </div>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-slate-400">
               A modern, sanitized family dental clinic offering gentle, painless
-              and affordable dental care. Led by Dr. Sriram Prabhu (B.D.S.,
+              and affordable dental care. Led by Dr. Arjun Mehra (B.D.S.,
               F.A.G.E), Dental Surgeon with 25 years of experience — root canals,
               wisdom tooth removal, implants, cavity fillings & more, with
               punctual appointments and flexible scheduling.
@@ -1118,7 +1118,7 @@ export default function HomePage() {
         <div className="border-t border-slate-800">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-slate-500 sm:flex-row sm:px-6 lg:px-8">
             <p>
-              © {new Date().getFullYear()} Vishnu Dental Care. All rights
+              © {new Date().getFullYear()} Dental Care. All rights
               reserved. Designed by{" "}
               <a
                 href="https://www.linkedin.com/in/glen-monteiro/"
